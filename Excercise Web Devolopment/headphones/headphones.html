@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            background-image: url('../images/headphones.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.7);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .headphone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .headphone-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .headphone-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .headphone-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 15px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1>Headphone Selection</h1>
+        <div class="headphone-grid">
+            <div class="headphone-card">
+                <img src="../images/samsunghp.jpg" alt="Samsung Headphones" class="headphone-image">
+                <h2>Samsung Headphones</h2>
+                <p>Premium Samsung audio experience</p>
+                <a href="samsung.html" class="back-link">View Samsung Models</a>
+            </div>
+            <div class="headphone-card">
+                <img src="../images/applehp.jpg" alt="Apple Headphones" class="headphone-image">
+                <h2>Apple Headphones</h2>
+                <p>Superior Apple sound quality</p>
+                <a href="apple.html" class="back-link">View Apple Models</a>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="../index.html" class="back-link">Back to Home</a>
+        </div>
+    </div>
+    <div id="footer-nav-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../footer-nav.html')  // Use relative path
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('footer-nav-placeholder').innerHTML = html;
+                })
+                .catch(err => {
+                    console.error('Failed to load footer nav:', err);
+                    document.getElementById('footer-nav-placeholder').innerHTML = 
+                        '<p style="color: red;">Failed to load navigation footer</p>';
+                });
+        });
+    </script>
+</body>
+</html>

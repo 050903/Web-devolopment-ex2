@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Apple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .price {
+            color: #2ecc71;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .specs {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .specs li {
+            margin: 8px 0;
+            color: #666;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Go to home page</a>
+        <a href="samsung.html">Go to Samsung phones</a>
+    </nav>
+
+    <div class="container">
+        <div class="product-card">
+            <h1>iPhone 14 Pro Max</h1>
+            <img src="../images/apple.jpg" alt="iPhone 14 Pro Max" class="product-image">
+            <p class="price">$1,099</p>
+            <ul class="specs">
+                <li>6.7-inch Super Retina XDR OLED Display</li>
+                <li>A16 Bionic Chip</li>
+                <li>48MP Main + 12MP Ultra Wide + 12MP Telephoto</li>
+                <li>4323mAh Battery with Fast Charging</li>
+                <li>Dynamic Island</li>
+                <li>Face ID Technology</li>
+                <li>iOS 16</li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer-nav-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../footer-nav.html')  // Use relative path
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('footer-nav-placeholder').innerHTML = html;
+                })
+                .catch(err => {
+                    console.error('Failed to load footer nav:', err);
+                    document.getElementById('footer-nav-placeholder').innerHTML = 
+                        '<p style="color: red;">Failed to load navigation footer</p>';
+                });
+        });
+    </script>
+</body>
+</html>

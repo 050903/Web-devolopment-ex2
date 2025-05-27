@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('../images/phones.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .phone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .phone-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .phone-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .phone-card img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1>Phone Categories</h1>
+        <div class="phone-grid">
+            <div class="phone-card">
+                <img src="../images/samsung.jpg" alt="Samsung">
+                <h2>Samsung</h2>
+                <p>Explore Samsung's latest smartphones</p>
+                <a href="samsung.html" class="back-link">View Samsung Phones</a>
+            </div>
+            <div class="phone-card">
+                <img src="../images/apple.jpg" alt="Apple">
+                <h2>Apple</h2>
+                <p>Discover iPhone collection</p>
+                <a href="apple.html" class="back-link">View Apple Phones</a>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="../index.html" class="back-link">Back to Home</a>
+        </div>
+    </div>
+    <div id="footer-nav-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../footer-nav.html')  // Use relative path
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('footer-nav-placeholder').innerHTML = html;
+                })
+                .catch(err => {
+                    console.error('Failed to load footer nav:', err);
+                    document.getElementById('footer-nav-placeholder').innerHTML = 
+                        '<p style="color: red;">Failed to load navigation footer</p>';
+                });
+        });
+    </script>
+</body>
+</html>

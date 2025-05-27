@@ -1,0 +1,91 @@
+<style>
+    .footer-nav {
+        background: #2c3e50;
+        padding: 30px 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .nav-category {
+        border-left: 3px solid #3498db;
+        padding-left: 15px;
+    }
+
+    .nav-category h3 {
+        color: #3498db;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+    }
+
+    .footer-nav a {
+        color: #ecf0f1;
+        text-decoration: none;
+        display: block;
+        padding: 8px 0;
+        transition: all 0.3s ease;
+        font-size: 0.9em;
+    }
+
+    .footer-nav a:hover {
+        color: #3498db;
+        transform: translateX(5px);
+    }
+
+    @media (max-width: 768px) {
+        .footer-nav {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .footer-nav {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<nav class="footer-nav">
+    <div class="nav-category">
+        <h3>Home</h3>
+        <a href="/index.html">Homepage</a>
+    </div>
+
+    <div class="nav-category">
+        <h3>Phones</h3>
+        <a href="/phones/samsung.html">Samsung Phone</a>
+        <a href="/phones/apple.html">Apple Phone</a>
+    </div>
+
+    <div class="nav-category">
+        <h3>Colors</h3>
+        <a href="/colors/red.html">Red Color</a>
+        <a href="/colors/blue.html">Blue Color</a>
+    </div>
+
+    <div class="nav-category">
+        <h3>Sizes</h3>
+        <a href="/sizes/small.html">Small Size</a>
+        <a href="/sizes/large.html">Large Size</a>
+    </div>
+
+    <div class="nav-category">
+        <h3>Styles</h3>
+        <a href="/styles/modern.html">Modern Style</a>
+        <a href="/styles/classic.html">Classic Style</a>
+    </div>
+
+    <div class="nav-category">
+        <h3>Materials</h3>
+        <a href="/materials/wood.html">Wood Material</a>
+        <a href="/materials/metal.html">Metal Material</a>
+    </div>
+
+    <div class="nav-category">
+        <h3>Headphones</h3>
+        <a href="/headphones/samsung.html">Samsung Headphones</a>
+        <a href="/headphones/apple.html">Apple Headphones</a>
+    </div>
+</nav>
+

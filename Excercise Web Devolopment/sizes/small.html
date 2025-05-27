@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Small</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        .specs {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .specs li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .size-comparison {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #e9ecef;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="sizes.html">Sizes</a>
+        <a href="large.html">Large Size</a>
+    </nav>
+
+    <div class="container">
+        <h1>Small Size Phones</h1>
+        <img src="../images/small.jpg" alt="Small Size Phone" class="product-image">
+        
+        <div class="size-comparison">
+            <h2>Size Details</h2>
+            <p>Screen size: 5.4 inches and below</p>
+            <p>Perfect for one-handed use</p>
+        </div>
+
+        <ul class="specs">
+            <li>Compact design for better portability</li>
+            <li>Comfortable one-handed operation</li>
+            <li>Fits easily in any pocket</li>
+            <li>Lightweight and ergonomic</li>
+            <li>Ideal for minimal phone users</li>
+        </ul>
+    </div>
+    <div id="footer-nav-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../footer-nav.html')  // Use relative path
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('footer-nav-placeholder').innerHTML = html;
+                })
+                .catch(err => {
+                    console.error('Failed to load footer nav:', err);
+                    document.getElementById('footer-nav-placeholder').innerHTML = 
+                        '<p style="color: red;">Failed to load navigation footer</p>';
+                });
+        });
+    </script>
+</body>
+</html>

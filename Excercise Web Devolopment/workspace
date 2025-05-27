@@ -1,0 +1,23 @@
+Exercise Web Devolopment/
+├── index.html        
+├── phones/              
+│   ├── samsung.html
+│   └── apple.html
+├── colors/            
+│   ├── red.html
+│   └── blue.html
+├── sizes/              
+│   ├── small.html
+│   └── large.html
+├── styles/            
+│   ├── modern.html
+│   └── classic.html
+├── materias/          
+│   ├── wood.html
+│   └── metal.html
+├── headphone/           
+│   ├── samsunghp.html  
+│   └── applehp.html     
+└── images/              
+    ├── apple.jpg
+    └── samsung.jpg

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Red</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .color-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .color-sample {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .crimson { background-color: #DC143C; }
+        .ruby { background-color: #E0115F; }
+        .scarlet { background-color: #FF2400; }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 40px 0;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="colors.html">Colors</a>
+        <a href="blue.html">Blue</a>
+    </nav>
+
+    <div class="container">
+        <h1>Red Color Options</h1>
+        
+
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-sample crimson"></div>
+                <h3>Crimson Red</h3>
+                <p>Deep and luxurious</p>
+            </div>
+
+            <div class="color-card">
+                <div class="color-sample ruby"></div>
+                <h3>Ruby Red</h3>
+                <p>Rich and vibrant</p>
+            </div>
+
+            <div class="color-card">
+                <div class="color-sample scarlet"></div>
+                <h3>Scarlet Red</h3>
+                <p>Bright and bold</p>
+            </div>
+        </div>
+    </div>
+    <div id="footer-nav-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../footer-nav.html')  // Use relative path
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('footer-nav-placeholder').innerHTML = html;
+                })
+                .catch(err => {
+                    console.error('Failed to load footer nav:', err);
+                    document.getElementById('footer-nav-placeholder').innerHTML = 
+                        '<p style="color: red;">Failed to load navigation footer</p>';
+                });
+        });
+    </script>
+</body>
+</html>
